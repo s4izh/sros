@@ -1,6 +1,30 @@
 # SrOS
 
-docs coming soon...
+Rust micro kernel targetting a x86_64 qemu machine build from scratch.
+
+`cargo build` produces a standalone binary that can be booted with qemu
+using `cargo run`.
+
+This is a toy project to learn more about Rust and OS development.
+
+## Features
+
+- Basic functions
+  - [x] Driver for VGA screen support via memory mapped IO
+  - [x] Driver for Serial port support via port mapped IO (16550 UART)
+  - [x] `print!` and `println!` macros for both VGA and Serial
+  - [x] `panic!` handler that prints to VGA and Serial
+  - [x] custom `test` framework for embedded system
+  - [x] exit qemu properly via writting to port `0xf4` (`isa-debug-exit` device)
+
+- [ ] CPU exceptions handler
+- [ ] Hardware interrupts handler
+- [ ] Paging and memory protection
+- [ ] Heap allocator
+- [ ] Userspace
+- [ ] Multiprocess and multithreading support
+- [ ] Copy on write `fork`
+
 
 ## TODO
 
