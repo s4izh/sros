@@ -26,6 +26,11 @@ This is a toy project to learn more about Rust and OS development.
 - [ ] Copy on write `fork`
 
 
-## TODO
+## Docker enviroment
 
-- [ ] build inside a docker container/nix-shell for portability
+```bash
+docker build -t ros .
+./run_docker.sh
+```
+
+Then compile and run with `cargo run`
