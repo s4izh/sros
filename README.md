@@ -17,8 +17,12 @@ This is a toy project to learn more about Rust and OS development.
   - [x] custom `test` framework for embedded system
   - [x] exit qemu properly via writting to port `0xf4` (`isa-debug-exit` device)
 
-- [ ] CPU exceptions handler
-- [ ] Hardware interrupts handler
+- [x] CPU exceptions handlers
+  - [x] breakpoint handler
+  - [x] double fault handler
+- [x] Hardware interrupts handler
+  - [x] Timer
+  - [ ] Keyboard
 - [ ] Paging and memory protection
 - [ ] Heap allocator
 - [ ] Userspace

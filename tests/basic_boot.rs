@@ -11,7 +11,7 @@ use ros::println;
 pub extern "C" fn _start() -> ! {
     test_main();
 
-    loop {}
+    ros::hlt_loop();
 }
 
 #[panic_handler]
