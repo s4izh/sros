@@ -22,7 +22,7 @@ This is a toy project to learn more about Rust and OS development.
   - [x] double fault handler
 - [x] Hardware interrupts handler
   - [x] Timer
-  - [ ] Keyboard
+  - [x] Keyboard
 - [ ] Paging and memory protection
 - [ ] Heap allocator
 - [ ] Userspace

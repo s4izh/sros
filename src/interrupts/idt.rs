@@ -10,6 +10,8 @@ lazy_static! {
         let mut idt = InterruptDescriptorTable::new();
         idt.breakpoint.set_handler_fn(handlers::breakpoint_handler);
         idt[InterruptIndex::Timer.as_usize()].set_handler_fn(handlers::timer_interrupt_handler);
+        idt[InterruptIndex::Keyboard.as_usize()]
+            .set_handler_fn(handlers::keyboard_interrupt_handler);
         unsafe {
             idt.double_fault
                 .set_handler_fn(handlers::double_fault_handler)
@@ -29,6 +31,7 @@ pub static PICS: spin::Mutex<ChainedPics> =
 #[repr(u8)]
 pub enum InterruptIndex {
     Timer = PIC_1_OFFSET,
+    Keyboard,
 }
 
 impl InterruptIndex {
