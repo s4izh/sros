@@ -7,6 +7,7 @@
 
 use core::panic::PanicInfo;
 
+pub mod gdt;
 pub mod interrupts;
 pub mod serial;
 pub mod vga_buffer;
@@ -70,9 +71,13 @@ fn panic(info: &PanicInfo) -> ! {
 pub extern "C" fn _start() -> ! {
     init();
     test_main();
+    #[allow(clippy::empty_loop)]
     loop {}
 }
 
 pub fn init() {
-    interrupts::init_idt();
+    gdt::init();
+    interrupts::idt::init_idt();
+    unsafe { interrupts::idt::PICS.lock().initialize() };
+    x86_64::instructions::interrupts::enable();
 }
