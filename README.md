@@ -24,6 +24,9 @@ This is a toy project to learn more about Rust and OS development.
   - [x] Timer
   - [x] Keyboard
 - [ ] Paging and memory protection
+  - [x] Page fault handler
+    - [ ] Complete page fault handler implementation
+  - [x] Mapped the complete physical memory to virtual memory at a given offset (easy approach)
 - [ ] Heap allocator
 - [ ] Userspace
 - [ ] Multiprocess and multithreading support
