@@ -41,3 +41,16 @@ docker build -t ros .
 ```
 
 Then compile and run with `cargo run`
+
+## Install on bare host
+
+Need to install `qemu-full` (arch linux), `cargo` and `rustc`.
+
+After that basic setup run:
+
+```bash
+rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
+cargo install bootimage
+rustup component add llvm-tools-preview
+rustup component add rust-analyzer
+```
